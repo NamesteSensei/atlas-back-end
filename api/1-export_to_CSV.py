@@ -22,7 +22,9 @@ def fetch_employee_data(employee_id):
     """
     # Define URLs for employee info and TODO list
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    todos_url = (
+        f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    )
 
     # Fetch employee data
     user_response = requests.get(user_url)
