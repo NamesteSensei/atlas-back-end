@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-This script fetches and displays an employee's TODO list progress using a REST API.
-
-Given an employee ID, it retrieves the employee's name and tasks,
-then displays the number of completed tasks along with a list of task titles.
+This script fetches and displays an employee's TODO list progress using
+a REST API. Given an employee ID, it retrieves the employee's name and
+tasks, then displays the number of completed tasks along with a list of
+task titles.
 """
 
 import requests  # For making HTTP requests to the API
@@ -42,7 +42,8 @@ def fetch_employee_data(employee_id):
 
     # Display summary of tasks completed
     print(
-        f"Employee {employee_name} is done with tasks({number_of_done_tasks}/{total_tasks}):"
+        f"Employee {employee_name} is done with tasks("
+        f"{number_of_done_tasks}/{total_tasks}):"
     )
     # Display titles of each completed task, indented with tab
     for task in completed_tasks:
