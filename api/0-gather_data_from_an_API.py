@@ -13,8 +13,8 @@ import sys       # For handling command-line arguments
 def fetch_employee_data(employee_id):
     """
     Fetch and display TODO list progress for a given employee ID.
+    
     Args:
-
         employee_id (int): The ID of the employee.
     """
 
