@@ -4,7 +4,8 @@ This script fetches an employee's TODO list from a REST API and exports
 the data to a JSON file in the format:
 {
   "USER_ID": [
-    {"task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS, "username": "USERNAME"},
+    {"task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS,
+    "username": "USERNAME"},
     ...
   ]
 }
@@ -18,16 +19,18 @@ import sys  # For handling command-line arguments
 def fetch_employee_data(employee_id):
     """
     Fetches employee info and TODO list based on employee ID.
-    
     Args:
+
         employee_id (int): The ID of the employee.
-    
     Returns:
+
         tuple: A tuple containing the employee's name and list of tasks.
     """
     # Define URLs for employee info and TODO list
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    todos_url = (
+        f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    )
 
     # Fetch employee data
     user_response = requests.get(user_url)
@@ -44,8 +47,8 @@ def fetch_employee_data(employee_id):
 def export_to_json(employee_id, employee_name, todos_data):
     """
     Exports the TODO list data to a JSON file.
-    
     Args:
+
         employee_id (int): The ID of the employee.
         employee_name (str): The username of the employee.
         todos_data (list): List of tasks associated with the employee.
@@ -63,8 +66,8 @@ def export_to_json(employee_id, employee_name, todos_data):
 
     # Define JSON filename
     filename = f"{employee_id}.json"
-    
     # Write data to JSON file
+
     with open(filename, mode="w") as jsonfile:
         json.dump(json_data, jsonfile)
 
