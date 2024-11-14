@@ -13,10 +13,8 @@ import sys  # For handling command-line arguments
 def fetch_employee_data(employee_id):
     """
     Fetches employee info and TODO list based on employee ID.
-    
     Args:
         employee_id (int): The ID of the employee.
-    
     Returns:
         tuple: A tuple containing the employee's name and list of tasks.
     """
@@ -41,7 +39,6 @@ def fetch_employee_data(employee_id):
 def export_to_csv(employee_id, employee_name, todos_data):
     """
     Exports the TODO list data to a CSV file.
-    
     Args:
         employee_id (int): The ID of the employee.
         employee_name (str): The username of the employee.
@@ -49,11 +46,9 @@ def export_to_csv(employee_id, employee_name, todos_data):
     """
     # Set up the CSV filename
     filename = f"{employee_id}.csv"
-    
     # Write data to CSV
     with open(filename, mode="w", newline="") as csvfile:
         csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-        
         # Write each task's data
         for task in todos_data:
             csvwriter.writerow([
