@@ -1,10 +1,15 @@
 #!/usr/bin/python3
+"""
+Exports all tasks for each employee to a JSON file.
+Each user's tasks are stored as a list of dictionaries, with the task title,
+completion status, and username, under their respective user ID.
+"""
 import json
 import requests
 
 
 def export_all_to_json():
-    """Export all employees' tasks to JSON format."""
+    """Export all employees' tasks to a JSON file."""
     # Base URL for API
     url = "https://jsonplaceholder.typicode.com"
 
