@@ -22,9 +22,13 @@ if __name__ == "__main__":
     base_url = "https://jsonplaceholder.typicode.com"
 
     # Fetch user data
-    user = requests.get(f"{base_url}/users/{employee_id}").json()
+    user = requests.get(
+        f"{base_url}/users/{employee_id}"
+    ).json()
     # Fetch tasks data
-    tasks = requests.get(f"{base_url}/todos?userId={employee_id}").json()
+    tasks = requests.get(
+        f"{base_url}/todos?userId={employee_id}"
+    ).json()
 
     # Get the employee's name and calculate task progress
     employee_name = user.get("name")
@@ -32,6 +36,9 @@ if __name__ == "__main__":
     completed_tasks = [task["title"] for task in tasks if task["completed"]]
 
     # Print the formatted output
-    print(f"Employee {employee_name} is done with tasks({len(completed_tasks)}/{total_tasks}):")
+    print(
+        f"Employee {employee_name} is done with tasks"
+        f"({len(completed_tasks)}/{total_tasks}):"
+    )
     for title in completed_tasks:
         print(f"\t {title}")
